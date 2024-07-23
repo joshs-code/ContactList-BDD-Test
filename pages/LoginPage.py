@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-
+import datetime
 
 class LoginPage:
 
@@ -8,13 +8,22 @@ class LoginPage:
         self.email_xpath = '//input[@id="email"]'
         self.password_xpath = '//input[@id="password"]'
         self.submit_btn_xpath = '//button[@id="submit"]'
+        self.logout_btn_xpath = '//button[@id="logout"]'
 
-    def register_user_details(self, fName, lName, email, password):
+
+    def enter_user_login(self, email, password):
         self.driver.find_element(By.XPATH, self.email_xpath).clear()
         self.driver.find_element(By.XPATH, self.email_xpath).send_keys(email)
 
         self.driver.find_element(By.XPATH, self.password_xpath).clear()
         self.driver.find_element(By.XPATH, self.password_xpath).send_keys(password)
 
+    def click_login_btn(self):
         self.driver.find_element(By.XPATH, self.submit_btn_xpath).click()
 
+    def verify_logged_in(self):
+        logout_btn = self.driver.find_element(By.XPATH, self.logout_btn_xpath)
+        assert logout_btn
+
+        screenshot_timestamp = datetime.datetime.now()
+        self.driver.save_screenshot(f"./screenshots/{screenshot_timestamp}.png")

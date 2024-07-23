@@ -7,3 +7,11 @@ Feature: ContactList Login
     And click on submit button
     Then user must have successfully created account.
     Then close the browser
+
+  Scenario: Login to ContactList
+    Given launch chrome browser
+    When i open contact list homepage
+    And enter email and password
+    And click on the submit button
+    Then user must have successfully logged in.
+    Then close the browser
