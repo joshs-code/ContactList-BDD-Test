@@ -1,0 +1,5 @@
+URL = "https://thinking-tester-contact-list.herokuapp.com"
+FIRSTNAME = "Josh"
+LASTNAME = "A"
+EMAIL = "TESTEMAIL1988@test.com"
+PASSWORD = "test1234567"
