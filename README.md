@@ -1,6 +1,6 @@
 #### Type of Testing: Functional and Regression Testing
 
-## To run tests: behave -f allure_behave.formatter:AllureFormatter -o "reports" features/contactlist.feature ##
+#### To run tests: behave -f allure_behave.formatter:AllureFormatter -o "reports" features/contactlist.feature ####
 
 These test cases cover a range of functionalities in the contact list web app, including user management, contact management, search and sorting features, and error handling. 
 They are designed to ensure the application's functionality, usability, and reliability. 
@@ -21,23 +21,10 @@ They are designed to ensure the application's functionality, usability, and reli
     Input: Valid contact details, including name, email, phone number, and address
     Expected Outcome: Contact added successfully
 
-**Test Case 5: Verify Editing a Contact**
+**Test Case 5: Verify Editing a Contact** ===> COMPLETED <br>
     Input: Existing contact details with modifications, including changes to contact information or adding additional notes
     Expected Outcome: Contact details updated successfully
 
-**Test Case 6: Verify Deleting a Contact**
+**Test Case 6: Verify Deleting a Contact** ===> COMPLETED <br>
     Input: Select a contact to delete, with confirmation prompt for deletion
     Expected Outcome: Contact deleted and removed from the user's contact list
-
-**Test Case 7: Verify Sorting of Contacts**
-    Input: Select a sorting option (e.g., by name, date added, or location) with ascending and descending order options
-    Expected Outcome: Contacts are displayed in the selected order, with the ability to customize default sorting preferences
-
-**Test Case 9: Verify Error Handling**
-    Input: Trigger various error scenarios (e.g., network timeout, server error, or invalid data input)
-    Expected Outcome: Proper error messages displayed, with suggestions for troubleshooting or contacting support for assistance
-
-**Test Case 10: Verify Logout Functionality**
-    Input: Click on the logout button, with an optional prompt to confirm log out for security
-    Expected Outcome: User is logged out and redirected to the login page, with session terminated and user data securely cleared from the local environment
-

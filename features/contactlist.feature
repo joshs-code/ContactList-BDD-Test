@@ -34,3 +34,26 @@ Feature: ContactList Login
     And click submit button
     Then contact must have successfully added to contact list
     Then close the browser
+
+  Scenario: Verify Editing a Contact
+    Given launch chrome browser
+    When i open contact list homepage
+    And enter email and password
+    And click on the submit button
+    And click first element
+    And click edit contact button
+    And edit the contact entry
+    And click submit button
+    Then verify details changes made
+    Then close the browser
+
+  Scenario: Verify Deleting a Contact
+    Given launch chrome browser
+    When i open contact list homepage
+    And enter email and password
+    And click on the submit button
+    And click first element
+    And click delete contact
+    And click ok on alert box
+    Then verify item is deleted
+    Then close the browser
