@@ -9,7 +9,7 @@ class LoginPage:
         self.password_xpath = '//input[@id="password"]'
         self.submit_btn_xpath = '//button[@id="submit"]'
         self.logout_btn_xpath = '//button[@id="logout"]'
-
+        self.login_error_msg_xpath = '//span[contains(text(), "Incorrect username or password")]'
 
     def enter_user_login(self, email, password):
         self.driver.find_element(By.XPATH, self.email_xpath).clear()
@@ -26,4 +26,11 @@ class LoginPage:
         assert logout_btn
 
         screenshot_timestamp = datetime.datetime.now()
-        self.driver.save_screenshot(f"./screenshots/{screenshot_timestamp}.png")
+        self.driver.save_screenshot(f"./screenshots/verified-valid-login{screenshot_timestamp}.png")
+
+    def verify_not_logged_in(self):
+        err_msg= self.driver.find_element(By.XPATH, self.login_error_msg_xpath).text
+        assert err_msg
+
+        screenshot_timestamp = datetime.datetime.now()
+        self.driver.save_screenshot(f"./screenshots/verified-invalid-login-{screenshot_timestamp}.png")

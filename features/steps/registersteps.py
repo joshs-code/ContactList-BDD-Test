@@ -30,7 +30,7 @@ def clickSignup(context):
 @when('enter first name and last name and email and password')
 def enterInfo(context):
     rp = RegisterPage(context.driver)
-    rp.register_user_details(names.get_first_name(), "a", names.get_first_name() + '@test.com', "meegy123abc")
+    rp.register_user_details(names.get_first_name(), "a", names.get_first_name() + '@' + names.get_last_name() + '.com', "meegy123abc")
 
 
 # Click on submit button

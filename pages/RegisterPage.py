@@ -37,4 +37,4 @@ class RegisterPage:
         assert logged_in == True
 
         screenshot_timestamp = datetime.datetime.now()
-        self.driver.save_screenshot(f'./screenshots/{screenshot_timestamp}.png')
+        self.driver.save_screenshot(f'./screenshots/verified-register-{screenshot_timestamp}.png')

@@ -5,21 +5,18 @@ class AddContactPage:
     def __init__(self, driver):
         self.driver = driver
         self.add_contact_btn_xpath = '//button[@id="add-contact"]'
-        self.fName_xpath = ''
-        self.lName_xpath = ''
-        self.dob_xpath = ''
-        self.email_xpath = ''
-        self.phone_xpath = ''
-        self.addr_one_xpath = ''
-        self.addr_two_xpath = ''
-        self.city_xpath = ''
-        self.state_xpath = ''
-        self.postal_code_xpath = ''
-        self.country_xpath = ''
-        self.submit_xpath = ''
-
-    def click_add_contact(self):
-        self.driver.find_element(By.XPATH, self.add_contact_btn_xpath).click()
+        self.fName_xpath = '//input[@id="firstName"]'
+        self.lName_xpath = '//input[@id="lastName"]'
+        self.dob_xpath = '//input[@id="birthdate"]'
+        self.email_xpath = '//input[@id="email"]'
+        self.phone_xpath = '//input[@id="phone"]'
+        self.addr_one_xpath = '//input[@id="street1"]'
+        self.addr_two_xpath = '//input[@id="street2"]'
+        self.city_xpath = '//input[@id="city"]'
+        self.state_xpath = '//input[@id="stateProvince"]'
+        self.postal_code_xpath = '//input[@id="postalCode"]'
+        self.country_xpath = '//input[@id="country"]'
+        self.submit_xpath = '//button[@type="submit"]'
 
     def add_contact(self, fname, lname, dob, email, phone, addrone, addrtwo, city, state, postcode, country):
         self.driver.find_element(By.XPATH, self.fName_xpath).clear()
@@ -49,4 +46,5 @@ class AddContactPage:
         self.driver.find_element(By.XPATH, self.country_xpath).clear()
         self.driver.find_element(By.XPATH, self.country_xpath).send_keys(country)
 
+    def click_submit_btn(self):
         self.driver.find_element(By.XPATH, self.submit_xpath).click()
